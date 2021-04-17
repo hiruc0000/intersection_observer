@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  transition: height 0.5s, background-color 0.5s;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+  /* height: 80px; */
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+li>a {
+  padding: 0.2em 1em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  color: white;
+  transition: border 0.5s;
+}
+
+li>a:hover {
+  border-color: white;
+}
+
+.select {
+  border-color: white;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+  color: white;
+}
+
+.section1 {
+  /* margin-top: 60px; */
+  /* padding-top: 60px; */
+  background: linear-gradient(to top right, #b1d2f7, #0c1cac);
+}
+
+.section2 {
+  background: linear-gradient(to top right, #fb9898, #8f0b0b);
+}
+
+.section3 {
+  background: linear-gradient(to top right, #f3b3fa, #6e088c);
+}
+
+.section4 {
+  background: linear-gradient(to top right, #b6f79b, #0f4208);
+}
+
+/* スクロール時に追加されるクラスのスタイル */
+.sticky {
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* border-bottom: 2px solid white; */
+  /* z-index: 10; */
+}
+
+.to-top.appear {
+  bottom: 40px;
+  visibility: visible;
+  opacity: 1;
+  /* z-index: 10; */
+}
+
+/* TOPへ戻るボタンスタイル */
+.to-top {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  /* z-index: -10; */
+  transition: bottom 0.7s, opacity 0.7s, visibility 0.7s;
+}
+
+.to-top .top::after {
+  position: absolute;
+  content: '';
+  top: 17px;
+  left: 14px;
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
