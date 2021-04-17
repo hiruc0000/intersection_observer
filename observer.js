@@ -32,15 +32,3 @@ function selectElement(target) {
   const newActiveIndex = document.querySelector(`a[href='#${target.id}']`);
   newActiveIndex.classList.add("select");
 }
-
-
-
-
-
-
-
-
-
-//  参考サイト
-//  https://ics.media/entry/190902/
-//  https://qiita.com/tkyngnm/items/fe94ef459c0de78fb89e
