@@ -14,10 +14,11 @@
   });
 })();
 
-function callback(entries) {
+function callback(entries, observer) {
   entries.forEach((entry) => {
     if(entry.isIntersecting){
       selectElement(entry.target);
+      //observer.unobserve(entry.target); //監視を一度で辞める場合に必要
     }
   });
 }
@@ -29,6 +30,6 @@ function selectElement(target) {
     activeIndex.classList.remove("select");
   }
 
-  const newActiveIndex = document.querySelector(`a[href='#${target.id}']`);
+  const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add("select");
 }
