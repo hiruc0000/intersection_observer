@@ -61,6 +61,17 @@ section {
   color: white;
 }
 
+section > .section-title {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 1s, opacity 1s;
+}
+
+.section-title.fadein {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .section1 {
   /* margin-top: 60px; */
   /* padding-top: 60px; */
