@@ -43,7 +43,7 @@ li>a {
   text-decoration: none;
   border: 1px solid transparent;
   color: white;
-  transition: border 0.5s;
+  transition: border-color 0.7s;
 }
 
 li>a:hover {

@@ -8,7 +8,7 @@
   //   threshold: 0
   // }
 
-  const observer = new IntersectionObserver(callback, options = {rootMargin: '-50% 0px'});
+  const observer = new IntersectionObserver(callback, options = {rootMargin: '-45% 0px'});
   const observer2 = new IntersectionObserver(callback2, options = {rootMargin: '0px 0px -20%'});
 
   sections.forEach((section) => {
@@ -33,15 +33,15 @@ function callback(entries, observer) {
 
 function selectIndex(target) {
   const activeIndex = document.querySelector('#index-list .select');
-  const sections = document.querySelectorAll('section');
 
-  sections.forEach((section) => {
-    section.classList.remove('select');
-  });
-  
-  if (activeIndex !== null) {
+  if (activeIndex) {
     activeIndex.classList.remove('select');
   }
+
+  const scrollTriggers = document.querySelectorAll('a[href^="#"]');
+  scrollTriggers.forEach((section) => {
+    section.classList.remove('select');
+  });
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');
