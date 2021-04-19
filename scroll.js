@@ -1,8 +1,9 @@
 (() => {
   const scrollTrigger = document.querySelectorAll('a[href^="#"]');
+  let eventType = window.ontouchstart ? 'touchstart' : 'click';
 
   for (let i = 0; i < scrollTrigger.length; i++) {
-    scrollTrigger[i].addEventListener('click', (e) => {
+    scrollTrigger[i].addEventListener(eventType, (e) => {
       e.preventDefault();
 
       const targetPosition = targetCalc(scrollTrigger, i);
@@ -15,14 +16,14 @@
   const toTop = document.querySelector('.to-top');
 
   //TOPへ戻るボタンへのイベント
-  toTop.addEventListener('click', () => {
+  toTop.addEventListener(eventType, () => {
     scrollToAction(0);
   });
 
   //スクロール時にクラスを付与する
   document.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    
+
     addStickyAndAppear(header, 'sticky', 80);
     addStickyAndAppear(toTop, 'appear', 350);
   });
