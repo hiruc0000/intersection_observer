@@ -43,15 +43,15 @@ li>a {
   text-decoration: none;
   border: 1px solid transparent;
   color: white;
-  transition: border-color 0.7s;
+  transition: border 0.7s;
 }
 
 li>a:hover {
-  border-color: white;
+  border: 1px solid white;
 }
 
 .select {
-  border-color: white;
+  border: 1px solid white;
 }
 
 section {
