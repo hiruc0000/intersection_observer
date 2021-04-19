@@ -38,10 +38,10 @@ function selectIndex(target) {
     activeIndex.classList.remove('select');
   }
 
-  const scrollTriggers = document.querySelectorAll('a[href^="#"]');
-  scrollTriggers.forEach((section) => {
-    section.classList.remove('select');
-  });
+  // const scrollTriggers = document.querySelectorAll('a[href^="#"]');
+  // scrollTriggers.forEach((section) => {
+  //   section.classList.remove('select');
+  // });
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');
