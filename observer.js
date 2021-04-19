@@ -27,19 +27,19 @@ function callback(entries, observer) {
     if(entry.isIntersecting){
       selectIndex(entry.target);
       // observer.unobserve(entry.target); //監視を一度で辞める場合に必要
-    } else {
-      const element = entry.target;
-      element.classList.remove('select');
     }
   });
 }
 
 function selectIndex(target) {
   const activeIndex = document.querySelector('#index-list .select');
-
-  if (activeIndex !== null) {
-    activeIndex.classList.remove('select');
-  }
+  const sections = document.querySelectorAll('section');
+  sections.forEach((section) => {
+    section.classList.remove('select');
+  });
+  // if (activeIndex !== null) {
+  //   activeIndex.classList.remove('select');
+  // }
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');
