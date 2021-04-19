@@ -34,12 +34,14 @@ function callback(entries, observer) {
 function selectIndex(target) {
   const activeIndex = document.querySelector('#index-list .select');
   const sections = document.querySelectorAll('section');
+
   sections.forEach((section) => {
     section.classList.remove('select');
   });
-  // if (activeIndex !== null) {
-  //   activeIndex.classList.remove('select');
-  // }
+  
+  if (activeIndex !== null) {
+    activeIndex.classList.remove('select');
+  }
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');
