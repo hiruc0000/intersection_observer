@@ -27,6 +27,9 @@ function callback(entries, observer) {
     if(entry.isIntersecting){
       selectIndex(entry.target);
       // observer.unobserve(entry.target); //監視を一度で辞める場合に必要
+    } else {
+      const element = entry.target;
+      element.classList.remove('select');
     }
   });
 }
