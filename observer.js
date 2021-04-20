@@ -33,16 +33,16 @@ function callback(entries, observer) {
 
 function selectIndex(target) {
   const activeIndex = document.querySelector('#index-list li .select');
-  const triggers = document.querySelectorAll('a[href^="#"]');
+  // const triggers = document.querySelectorAll('a[href^="#"]');
 
 
   if (activeIndex !== null) {
     activeIndex.classList.remove('select');
   }
 
-  triggers.forEach((trigger) => {
-    trigger.classList.remove('select');
-  });
+  // triggers.forEach((trigger) => {
+  //   trigger.classList.remove('select');
+  // });
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');

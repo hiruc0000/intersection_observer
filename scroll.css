@@ -46,8 +46,10 @@ li>a {
   transition: border 0.7s;
 }
 
-li>a:hover {
-  border: 1px solid white;
+@media screen and (min-width: 780px) {
+  li>a:hover {
+    border: 1px solid white;
+  }
 }
 
 .select {
