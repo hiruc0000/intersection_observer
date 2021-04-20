@@ -42,7 +42,6 @@ function selectIndex(target) {
 
   triggers.forEach((trigger) => {
     trigger.classList.remove('select');
-    console.log(trigger);
   });
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
