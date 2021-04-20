@@ -8,7 +8,7 @@
   //   threshold: 0
   // }
 
-  const observer = new IntersectionObserver(callback, options = {rootMargin: '-45% 0px'});
+  const observer = new IntersectionObserver(callback, options = {rootMargin: '-50% 0px'});
   const observer2 = new IntersectionObserver(callback2, options = {rootMargin: '0px 0px -20%'});
 
   sections.forEach((section) => {
@@ -33,15 +33,15 @@ function callback(entries, observer) {
 
 function selectIndex(target) {
   const activeIndex = document.querySelector('#index-list .select');
+  const sections = document.querySelectorAll('section');
 
-  if (activeIndex) {
+  sections.forEach((section) => {
+    section.classList.remove('select');
+  });
+
+  if (activeIndex !== null) {
     activeIndex.classList.remove('select');
   }
-
-  // const scrollTriggers = document.querySelectorAll('a[href^="#"]');
-  // scrollTriggers.forEach((section) => {
-  //   section.classList.remove('select');
-  // });
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');
@@ -51,12 +51,8 @@ function selectIndex(target) {
 function callback2(entries, observer) {
   entries.forEach((entry) => {
     if(entry.isIntersecting){
-      fadein(entry.target);
+      entry.target.classList.add('fadein');
       observer.unobserve(entry.target); //監視を一度で辞める場合に必要
     }
   });
-}
-
-function fadein(target) {
-  target.classList.add('fadein');
 }
