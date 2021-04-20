@@ -1,16 +1,26 @@
 (() => {
-  const scrollTrigger = document.querySelectorAll('a[href^="#"]');
+  const scrollTriggers = document.querySelectorAll('a[href^="#"]');
   let eventType = window.ontouchstart ? 'touchstart' : 'click';
 
-  for (let i = 0; i < scrollTrigger.length; i++) {
-    scrollTrigger[i].addEventListener(eventType, (e) => {
+  // for (let i = 0; i < scrollTriggers.length; i++) {
+  //   scrollTriggers[i].addEventListener(eventType, (e) => {
+  //     e.preventDefault();
+  //
+  //     const targetPosition = targetCalc(scrollTriggers[i], i);
+  //
+  //     scrollToAction(targetPosition);
+  //   });
+  // }
+
+  scrollTriggers.forEach((scrollTrigger, i) => {
+    scrollTrigger.addEventListener(eventType, (e) => {
       e.preventDefault();
 
       const targetPosition = targetCalc(scrollTrigger, i);
 
       scrollToAction(targetPosition);
     });
-  }
+  });
 
 
   const toTop = document.querySelector('.to-top');
@@ -30,8 +40,8 @@
 })();
 
 
-function targetCalc(elements, i) {
-  const href = elements[i].getAttribute('href');
+function targetCalc(element, i) {
+  const href = element.getAttribute('href');
   const targetElement = document.querySelector(href);
 
   const rect = targetElement.getBoundingClientRect().top;

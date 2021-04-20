@@ -32,16 +32,17 @@ function callback(entries, observer) {
 }
 
 function selectIndex(target) {
-  const activeIndex = document.querySelector('#index-list .select');
-  const sections = document.querySelectorAll('section');
+  const activeIndex = document.querySelector('#index-list li .select');
+  // const triggers = document.querySelectorAll('a[href^="#"]');
 
-  sections.forEach((section) => {
-    section.classList.remove('select');
-  });
-  
+
   if (activeIndex !== null) {
     activeIndex.classList.remove('select');
   }
+
+  // triggers.forEach((trigger) => {
+  //   trigger.classList.remove('select');
+  // });
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');
@@ -51,12 +52,8 @@ function selectIndex(target) {
 function callback2(entries, observer) {
   entries.forEach((entry) => {
     if(entry.isIntersecting){
-      fadein(entry.target);
+      entry.target.classList.add('fadein');
       observer.unobserve(entry.target); //監視を一度で辞める場合に必要
     }
   });
-}
-
-function fadein(target) {
-  target.classList.add('fadein');
 }

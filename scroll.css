@@ -43,15 +43,17 @@ li>a {
   text-decoration: none;
   border: 1px solid transparent;
   color: white;
-  transition: border 0.5s;
+  transition: border 0.7s;
 }
 
-li>a:hover {
-  border-color: white;
+@media screen and (min-width: 780px) {
+  li>a:hover {
+    border: 1px solid white;
+  }
 }
 
 .select {
-  border-color: white;
+  border: 1px solid white;
 }
 
 section {
