@@ -32,16 +32,18 @@ function callback(entries, observer) {
 }
 
 function selectIndex(target) {
-  const activeIndex = document.querySelector('#index-list .select');
-  const sections = document.querySelectorAll('section');
+  const activeIndex = document.querySelector('#index-list li .select');
+  const triggers = document.querySelectorAll('a[href^="#"]');
 
-  sections.forEach((section) => {
-    section.classList.remove('select');
-  });
 
   if (activeIndex !== null) {
     activeIndex.classList.remove('select');
   }
+
+  triggers.forEach((trigger) => {
+    trigger.classList.remove('select');
+    console.log(trigger);
+  });
 
   const newActiveIndex = document.querySelector(`a[href="#${target.id}"]`);
   newActiveIndex.classList.add('select');
